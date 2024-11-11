@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        :root{
+            --body: 58, 166, 185;
+            --text: 249, 249, 224;
+            --bg: 255, 208, 208;
+            --dark-bg: 255, 158, 170;
+            --font: clamp(18px , 4vw, 45px);
+            --a: white;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            position: relative;
+            cursor: -moz-zoom-in;
+        }
+        body{
+            width: 100vw;
+            overflow-x: hidden;
+            background-image: url(./IMG-20241107-WA0001.jpg);
+            background-size: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+         }
+        .author{
+            display: flex;
+            justify-content: center;
+            margin: 60px auto 0;
+            font-family: "Philosopher", sans-serif;
+            font-size: clamp(14px, 1.8vw, 30px);
+            color: rgb(var(--text));
+            h1{
+                text-shadow: 3px 3px 0 #000,
+                             3px -3px 0 #a07a7e;
+            span{
+             font-size: clamp(18px, 8vw, 60px);
+            }
+            }
+        }
+        @media screen and (max-width: 720px){
+            .author > h1{
+                text-shadow: 2px 2px 0 #000,
+                             2px -2px 0 #a07a7e;
+            }
+        }
+        .poet-box{
+            max-width: 80vw;
+            padding: 5vw;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.297);
+            color: rgb(var(--text));
+            font-size: var(--font);
+            font-style: italic;
+            line-height: calc(var(--font) + 10px);
+            margin: 8vh auto 12vh;
+        }
+
+        .poet-name{
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        @media screen and (min-width:780px){
+            body{
+                background-size: 100vw;
+                background-position: contain;
+            }
+
+            .poet-box{
+            max-width: 720px;
+            padding: 4vw;
+            }
+            .stars{
+                margin-left: 2vw;
+            }
+        }
+        .stars{
+            display: flex;
+            position: fixed;
+            top: -50px;
+        }
+        .fa-star{
+            margin: 0 5px;
+            animation-duration: 2.8s;
+        }
+        @keyframes stars{
+            0%{
+                opacity: 0;
+
+            }
+            10%{
+                opacity: 1;
+            }
+            80%{
+                opacity: 1;
+                transform: rotateY(180deg)
+            }
+            90%{
+                opacity: 0;
+            }
+            100%{
+                margin-top: 140vh;
+            }
+        }
+
+        #cursor{
+            padding: 20px;
+            border: 3px solid rgb(var(--text));
+            border-radius: 50%;
+            position: absolute;
+            transform: translateY(-100%);
+        }
+        #cursor::after{
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: rgb(var(--text));
+            border-radius: 50%;
+            border: 2px solid rgb(var(--text));
+            position: absolute;
+            top: -50%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars1">
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+    </div>
+    <div class="stars" id="stars2">
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+        <i class="fa-star fa"></i>
+    </div>
+    <div class="author">
+        <h1>Poems by- <br> <span>SAKIBAL HASAN</span></h1>
+    </div>
+    <div class="poet-box">
+        <div class="poet-name" > ~মুই খুদ~  </div>
+        <br>
+        কুমিল্লা জেলার বরুড়া মোর থানা, <br>
+        রতনপুরে বসত করি <br>
+        নাইকো সবার জানা । 
+        <br><br>
+        পড়াশোনা করে জীবন চালাই, <br>
+        বাবার উপর চলি । <br>
+        পড়ার ফাঁকে লেখার মাঝে <br>
+        সত্য কথায় বলি । 
+        <br><br>
+        মায়ের আদেশ বাবার হুকুম <br>
+        সৎ পথে চলা, <br>
+        গরিব দুঃখীর পাশে থেকে <br>
+        ওদের কথায় বলা । 
+        <br><br>
+        রবের নিকট নামাজ পড়ে <br>
+        দোয়া করি রোজ, <br>
+        সুযোগ পেলেই পাড়াপড়শির<br>
+        নিত্য রাখি খোঁজ । 
+        <br><br>
+        মানবতার গান গেয়ে ভাই <br>
+        বেঁচে থাকতে চাই, <br>
+        উঁচু নিচু তফাৎ ভুলে <br>
+        এক কাতারে দাঁড়াই! <br>
+
+    </div>
+    <div class="poet-box">
+       <div class="poet-name">~অবদান~ </div>
+       <br>
+       সংসারে প্রয়োজনে সবার মুখে মুখে  <br>
+       এই না নারী তোমার নাম,  <br>
+       প্রয়োজন শেষে করে না কেউই  <br>
+       আর তোমার অবদান।
+       <br> <br>
+       পরিবার বলো পরিজন বলো  <br>
+       সবাই ঘুরে নিজের স্বার্থে,  <br>
+       তারা প্রিয়জন বানায় তোমায়  <br>
+       প্রয়োজনের-ই রক্ষার্থে।
+       <br> <br>
+       বড় বলো ছোট বলো   <br>
+       তাতে কি যায় আসে?  <br>
+       সবাইকে নারী তুমি সেবা দাও  <br>
+       আপন মনে ভালোবেসে। 
+       <br> <br>
+       সংসারে টানা খাটনি করো রোজ,  <br>
+       তারপরেও তোমার নেয় না কেউই খোঁজ।
+       <br> <br>
+       এতো খাটনি পরেও খাও  <br>
+       তুমি রোজই ঝাড়ি  <br>
+       কারণ, তোমার নামই নারী। 
+       <br> <br>
+       হাজার দুঃখ-বেদনার পরেও  <br>
+       শান্ত তোমার মন,  <br>
+       তারপরেও সংসারই তোমার   <br>
+       সবচাইতে আপনজন।
+       <br> <br>
+       ইচ্ছে শক্তি, চেতনা বল  <br>
+       জাগাও আবার জাগাও,  <br>
+       সফলতা ছুঁইয়ে তুমি,  <br>
+       নিজের জীবন রাঙাও!
+    </div>
+
+
+
+    <!-- <div id="cursor"></div> -->
+    <script>
+        const stars1 = document.getElementById('stars1').querySelectorAll('.fa-star')
+        const stars2 = document.getElementById('stars2').querySelectorAll('.fa-star')
+        const color = ['#4CC9FE','#51C4D3', '#B0EBB4', '#09C6AB', '#B8FFD0','#4CC9FE','#D2E0FB','#B6FFFA', '#863A6F']
+
+        const animation = ['animation-timing-function: cubic-bezier(.68,.25,.83,.67);', 'animation-timing-function: cubic-bezier(.68,.25,.41,.86);', 'animation-timing-function: cubic-bezier(.25,.62,.99,.56);']
+        
+        setInterval('fallStar(stars1)', 2500)
+        setInterval('fallStar(stars2)', 2890)
+
+
+        
+        function fallStar(stars) {
+            let i = Math.floor(Math.random()* stars.length)
+            let c = Math.floor(Math.random()* color.length)
+            let a = Math.floor(Math.random()* animation.length)
+            stars[i].style = `color: ${color[c]}; animation-name: stars; ${animation[a]}`
+            setTimeout(() => {
+            stars[i].style = `animation: none`
+                
+            }, 2490);
+        }
+
+        // const cursor = document.querySelector('#cursor')
+        // document.addEventListener('mousemove', (e) => {
+
+        //     cursor.style.left = `${e.screenX}px`
+        //     cursor.style.top = `${e.screenY}px`
+            
+        //     // window.addEventListener('mouseenter',() => {console.log('leaved')})
+            
+        // })
+
+    </script>
+</body>
+</html>
