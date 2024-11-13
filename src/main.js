@@ -20,13 +20,5 @@ const stars1 = document.getElementById('stars1').querySelectorAll('.fa-star')
             }, 2490);
         }
 
-        // const cursor = document.querySelector('#cursor')
-        // document.addEventListener('mousemove', (e) => {
-
-        //     cursor.style.left = `${e.screenX}px`
-        //     cursor.style.top = `${e.screenY}px`
-            
-        //     // window.addEventListener('mouseenter',() => {console.log('leaved')})
-            
-        // })
-
+        let poetBox = document.querySelectorAll('.poet-box')
+        poetBox.forEach(element => element.addEventListener('click', ()=> element.classList.toggle('box-shadow')) );
