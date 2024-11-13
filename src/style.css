@@ -5,8 +5,7 @@
     --text: 249, 249, 224;
     --bg: 255, 208, 208;
     --dark-bg: 255, 158, 170;
-    --font: clamp(18px , 4vw, 45px);
-    --a: white;
+    --font: clamp(18px , 4vw, 40px);
 }
 *{
     margin: 0;
@@ -54,6 +53,8 @@ body{
     font-style: italic;
     line-height: calc(var(--font) + 10px);
     margin: 8vh auto 12vh;
+
+    box-shadow: -2px -2px  #c4e6ffc4;
 }
 
 .poet-name{
