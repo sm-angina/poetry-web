@@ -39,3 +39,127 @@ poemBox.forEach((element) =>
     element.classList.toggle("box-shadow")
   )
 );
+
+document.onscroll = () => {
+  if (!navVisibility && !aScrolling) {
+    if (window.scrollY >= 600) {
+      showNavi.querySelector("i").style.transition = "200ms";
+      showNavi.querySelector("i").style.opacity = "0";
+
+      setTimeout(() => {
+        showNavi.querySelector("i").style.transition = "500ms";
+        showNavi.querySelector("i").style.opacity = "1";
+      }, 1000);
+    } else {
+      showNavi.style.opacity = "1";
+    }
+  }
+};
+
+const nav = document.querySelector("nav"),
+  showNavi = document.querySelector(".nav-control-i"),
+  wrapper = document.querySelector(".wrapper"),
+  background = document.querySelector(".bg");
+let navVisibility = false;
+
+showNavi.addEventListener("click", () => {
+  if (navVisibility) {
+    wrapper.style.transform = "none";
+    showNavi.querySelector("i").style.transform = "none";
+
+    nav.style.opacity = "0";
+    setTimeout(() => {
+      nav.style.zIndex = "-1";
+    }, 500);
+    showNavi.style.transform = "none";
+    navVisibility = false;
+    showNavi.querySelector("i").style.opacity = "1";
+  } else {
+    wrapper.style.transform = "translateX(-10vw)";
+    showNavi.querySelector("i").style.transform = "rotate(360deg)";
+    setTimeout(() => {
+      nav.style.zIndex = "1";
+      nav.style.opacity = "1";
+    }, 200);
+    navVisibility = true;
+  }
+});
+
+const navi = document.querySelector("nav").querySelectorAll("i");
+navi.forEach((element) => {
+  element.addEventListener("click", () => {
+    if (
+      element.classList.contains("sun-i") &&
+      element.classList.contains("chat-i")
+    ) {
+      element.style.color = "red";
+      setTimeout(() => {
+        element.style.color = "rgb(var(--text))";
+      }, 150);
+    }
+  });
+});
+
+let bgImage = "moon";
+document.querySelector(".sun-i").addEventListener("click", () => {
+  if (bgImage == "moon") {
+    background.style.backgroundImage = "url(src/IMG-SUN01-.jpg)";
+    if(document.body.offsetWidth > 780){
+      background.style.backgroundSize = "110vh"
+    }
+    bgImage = "sun";
+    showNavi.click();
+  } else {
+    if(document.body.offsetWidth > 780){
+      background.style.backgroundSize = "100vw"
+    }
+    background.style.backgroundImage = "url(src/IMG-MOON-.jpg)";
+    bgImage = "moon";
+    showNavi.click();
+  }
+  setTimeout(() => {
+    document.querySelector(".sun-i").classList.toggle("bxs-sun");
+    document.querySelector(".sun-i").classList.toggle("bxs-moon");
+  }, 200);
+});
+let aScrolling = false;
+document.querySelector(".a-scrolli").addEventListener("click", (e) => {
+  if (aScrolling) {
+    clearInterval(aScroll);
+    document.querySelector(".a-scrolli").style.color = "rgb(var(--text))";
+    aScrolling = false;
+    showNavi.click();
+  } else {
+    document.querySelector(".a-scrolli").style.color = "red";
+    aScroll = setInterval(() => {
+      scrollBy(0, 1);
+    }, 40);
+    aScrolling = true;
+    showNavi.click();
+  }
+});
+const favButton = document.querySelector(".fav-button");
+favButton.style.transition = "500ms";
+favButton.addEventListener("click", () => {
+  favButton.classList.toggle("fa-regular");
+  favButton.classList.toggle("fa-solid");
+  favButton.classList.toggle("fa-bounce");
+  favButton.style.color = "#ed333b";
+  localStorage.setItem("isFav", "yes");
+  if (favButton.classList.contains("fa-solid")) {
+    localStorage.setItem("isSolid", "yes");
+  } else {
+    localStorage.removeItem("isSolid");
+  }
+});
+let isFav = localStorage.getItem("isFav");
+let isSolid = localStorage.getItem("isSolid");
+if (isFav == "yes") {
+  favButton.style.color = "#ed333b";
+  if (isSolid == "yes") {
+    favButton.classList.remove("fa-regular");
+    favButton.classList.add("fa-solid");
+    favButton.classList.remove("fa-bounce");
+  } else {
+  }
+}

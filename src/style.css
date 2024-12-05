@@ -11,27 +11,74 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
   cursor: -moz-zoom-in;
 }
-
-body {
+a {
+  text-decoration: none;
+  color: rgb(var(--text));
+}
+.wrapper {
   width: 100vw;
   overflow-x: hidden;
+  transition: 0.5s;
 }
-
-body::after {
-  content: "";
+.bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: -11;
-  background-image: url(./IMG-20241107-WA0001.jpg);
+  z-index: -1;
+  background-image: url(./IMG-MOON-.jpg);
   background-size: 120vh;
   background-position: center;
 }
+nav {
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: end;
+  z-index: -1;
+  transition: 200ms;
+  opacity: 0;
+}
+
+.nav-control-i {
+  position: fixed;
+  top: 8vh;
+  right: 5vw;
+  z-index: 11;
+}
+.nav-control-i > i {
+  cursor: pointer;
+  font-size: clamp(18px, 4vw, 30px);
+  padding: 2vh;
+  transition: 0.5s;
+  color: rgb(var(--text));
+}
+nav > ul {
+  height: 70%;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav > ul > li > i,
+nav > ul > li > a > i {
+  font-size: var(--font);
+  padding: 10px;
+  color: rgb(var(--text));
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 1px 1px 250px white;
+}
+
 .author {
   display: flex;
   justify-content: center;
@@ -47,6 +94,12 @@ body::after {
   }
 }
 @media screen and (max-width: 720px) {
+  .nav-control-i {
+    top: 3.5vh;
+  }
+  nav > ul {
+    padding-bottom: 5vh;
+  }
   .author > h1 {
     text-shadow: 2px 2px 0 #000, 2px -2px 0 #a07a7e;
   }
@@ -82,7 +135,7 @@ body::after {
   content: "— ";
 }
 @media screen and (min-width: 780px) {
-  body::after {
+  .bg {
     background-size: 100vw;
     background-position: contain;
   }
@@ -121,23 +174,4 @@ body::after {
   100% {
     margin-top: 140vh;
   }
-}
-
-#cursor {
-  padding: 20px;
-  border: 3px solid rgb(var(--text));
-  border-radius: 50%;
-  position: absolute;
-  transform: translateY(-100%);
-}
-#cursor::after {
-  content: "";
-  width: 5px;
-  height: 5px;
-  background-color: rgb(var(--text));
-  border-radius: 50%;
-  border: 2px solid rgb(var(--text));
-  position: absolute;
-  top: -50%;
-  left: 0;
 }
