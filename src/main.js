@@ -101,27 +101,42 @@ navi.forEach((element) => {
 });
 
 let bgImage = "moon";
-document.querySelector(".sun-i").addEventListener("click", () => {
+document.querySelector(".sun-i").addEventListener("click", changeBg)
+function changeBg(){
   if (bgImage == "moon") {
     background.style.backgroundImage = "url(src/IMG-SUN01-.jpg)";
     if(document.body.offsetWidth > 780){
       background.style.backgroundSize = "110vh"
     }
+    poemBox.forEach((box) => {
+      box.style.backgroundColor = "rgb(207, 207, 207, 0.22)"
+      box.style.color = "rgba(0, 0, 0, 0.829)"
+      box.querySelector('.poet').style.borderBottom = '1px dashed #000'
+      box.style.fontWeight = "500"
+    })
     bgImage = "sun";
     showNavi.click();
+  localStorage.setItem('bgSun','yes')
   } else {
     if(document.body.offsetWidth > 780){
       background.style.backgroundSize = "100vw"
     }
     background.style.backgroundImage = "url(src/IMG-MOON-.jpg)";
+    poemBox.forEach((box) => {
+      box.style.backgroundColor = "rgba(0, 0, 0, 0.297)"
+      box.style.color = "rgb(var(--text))"
+      box.querySelector('.poet').style.borderBottom = '.5px dashed #fff'
+      box.style.fontWeight = "none"
+    })
     bgImage = "moon";
     showNavi.click();
+    localStorage.removeItem('bgSun')
   }
   setTimeout(() => {
     document.querySelector(".sun-i").classList.toggle("bxs-sun");
     document.querySelector(".sun-i").classList.toggle("bxs-moon");
   }, 200);
-});
+};
 let aScrolling = false;
 document.querySelector(".a-scrolli").addEventListener("click", (e) => {
   if (aScrolling) {
@@ -154,6 +169,7 @@ favButton.addEventListener("click", () => {
 });
 let isFav = localStorage.getItem("isFav");
 let isSolid = localStorage.getItem("isSolid");
+let bgSun = localStorage.getItem("bgSun")
 if (isFav == "yes") {
   favButton.style.color = "#ed333b";
   if (isSolid == "yes") {
@@ -162,4 +178,23 @@ if (isFav == "yes") {
     favButton.classList.remove("fa-bounce");
   } else {
   }
+}
+if(bgSun == 'yes'){
+    background.style.backgroundImage = "url(src/IMG-SUN01-.jpg)";
+    if(document.body.offsetWidth > 780){
+      background.style.backgroundSize = "110vh"
+    }
+    poemBox.forEach((box) => {
+      box.style.transition = "none"
+      box.style.backgroundColor = "rgb(207, 207, 207, 0.22)"
+      box.style.color = "rgba(0, 0, 0, 0.829)"
+      box.style.fontWeight = "500"
+      box.querySelector('.poet').style.borderBottom = '1px dashed #000'
+      setTimeout(box.style.transition = "500ms", 100)
+    })
+    bgImage = "sun";
+      setTimeout(() => {
+    document.querySelector(".sun-i").classList.toggle("bxs-sun");
+    document.querySelector(".sun-i").classList.toggle("bxs-moon");
+  }, 200);
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --body: 58, 166, 185;
@@ -110,10 +110,11 @@ nav > ul > li > a > i {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.297);
   color: rgb(var(--text));
-  font-size: var(--font);
-  font-style: italic;
+  font-size: calc(var(--font) + 2px);
+  font-family: "Galada", cursive;
   line-height: calc(var(--font) + 10px);
   margin: 8vh auto 12vh;
+  transition: all .5s;
 }
 
 .box-shadow {
