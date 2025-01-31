@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Galada&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Philosopher:ital,wght@0,4git 00;0,700;1,400;1,700&display=swap');
 
 :root {
   --body: 58, 166, 185;
@@ -16,6 +16,10 @@
 a {
   text-decoration: none;
   color: rgb(var(--text));
+}
+div:active, li:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .wrapper {
   width: 100vw;
