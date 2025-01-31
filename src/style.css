@@ -17,6 +17,10 @@ a {
   text-decoration: none;
   color: rgb(var(--text));
 }
+div:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
 .wrapper {
   width: 100vw;
   overflow-x: hidden;
