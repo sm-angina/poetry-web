@@ -19,6 +19,12 @@ div:active, li:active {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+/*-*-*-*-*/
+.highlight{
+  color: rgb(58, 101, 243);
+}
+
 .wrapper {
   width: 100vw;
   overflow-x: hidden;
@@ -153,11 +159,12 @@ nav > ul > li > a > i {
 }
 .stars {
   display: flex;
+  justify-content: space-between;
+  width: 100vw;
   position: fixed;
   top: -50px;
 }
 .fa-star {
-  margin: 0 5px;
   animation-duration: 2.8s;
 }
 @keyframes stars {
