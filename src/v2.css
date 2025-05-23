@@ -1,0 +1,206 @@
+
+
+*{
+    margin: none;
+    padding: none;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    position: relative;
+}
+:root{
+    --primary: #24d1ac;
+    --secondary: #0effdf50;
+    --border: #35A29F;
+    --text: #97FEED;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    overflow: hidden;
+}
+nav{
+    padding: 5px;
+    border: 0 solid grey;
+    border-radius: 5px;
+    background-color: var(--secondary);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    transition: all .5s;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 101;
+}
+nav i{
+    color: gray;
+    font-size: clamp(15px, 6vw, 40px);
+}
+.nav-wrapper{
+    width: 100%;
+    height: 100%;
+}
+.navbar{
+    display: flex;
+    margin-top: 10px;
+    margin-right: 5px;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+    font-size: clamp(15px, 6vw, 40px);
+}
+.settngs-i,.nav-close{
+    font-size: clamp(10px, 4vw, 30px);
+    
+}
+.poem-list ul{
+    height: 70vh;
+    margin-top: 20vh;
+    list-style-type: none;
+    padding: 0;
+    overflow-y: scroll;
+    border-top: 2px solid gray;
+}
+.poem-list li::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(43deg) translate(-50%, -40%);
+    background-color: red;
+}
+.poem-list li:first-child::before{
+display: none;
+}
+.poem-list .poem-index{
+    position: absolute;
+    left: 5px;
+}
+.poem-list ul li{
+    font-size: clamp(10px, 4.5vw, 30px);
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border-bottom: .5px dashed rgb(155, 151, 151);
+    font-family: "Alkatra", "Tiro Bangla";
+}
+
+/* ------ m a i n ------- */
+
+.poem-name{
+    width: 30vw;
+    padding: 1vw;
+    /* background-color: var(--secondary); */
+    position: absolute;
+    top: 10vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    text-decoration: underline;
+    font-size: clamp(15px, 5vw, 40px)   ;
+    font-family: 'Alkatra';
+}
+.poem-name::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(43deg) translate(-50%, -40%);
+    background-color: red;
+}
+.poem-box{
+    width: 100%;
+    height: 65vh;
+    overflow-y: scroll;
+    padding: 5vw 20vw;
+    background-color: #ffffff2a;
+    box-shadow: #61e4c5dc 10px -10px 15px,
+    #61e4c5dc 10px 10px 15px;
+    position: absolute; 
+    top: 20vh;
+    font-family: "Tiro Bangla","Anek Bangla" sans-serif;
+    font-size: clamp(10px, 4vw, 30px)   ;
+    /* text-align: center; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes formNav {
+    0%{
+       width: calc(clamp(15px, 6vw, 40px) + 10px);
+       height: calc(clamp(15px, 6vw, 40px) + 10px);
+       top: 0;
+       right: 0;
+       transform: translate(0vw, 0vh);
+       border-width: .5px;
+    }
+    75%{
+        width: 0;
+       height: 0;
+       padding: 0;
+       border-width: 5px;
+       transform: translate(-50vw, 50vh);
+    }
+    100%{
+       width: 100vw;
+       height: 100vh;
+       top: 0;
+       right: 0;
+       border-radius: 30px;
+       border-width: 2px;
+    }
+}
+@keyframes closeNav {
+    0%{
+       width: 100vw;
+       height: 100vh;
+       top: 0;
+       right: 0;
+       border-radius: 30px;
+       border-width: 2px;
+    }
+    75%{
+        width: 0;
+       height: 0;
+       padding: 0;
+       border-width: 5px;
+       transform: translate(-50vw, 50vh);
+    }
+    100%{
+       width: calc(clamp(15px, 6vw, 40px) + 10px);
+       height: calc(clamp(15px, 6vw, 40px) + 10px);
+       top: 10px;
+       right: 5px;
+       transform: translate(0vw, 0vh);
+       border-radius: 5px;
+        border-width: .5px;
+    }
+}
