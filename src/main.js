@@ -137,6 +137,8 @@ function changeBg(){
     document.querySelector(".sun-i").classList.toggle("bxs-moon");
   }, 200);
 };
+
+
 let aScrolling = false;
 document.querySelector(".a-scrolli").addEventListener("click", (e) => {
   if (aScrolling) {
@@ -153,6 +155,7 @@ document.querySelector(".a-scrolli").addEventListener("click", (e) => {
     showNavi.click();
   }
 });
+
 const favButton = document.querySelector(".fav-button");
 favButton.style.transition = "500ms";
 favButton.addEventListener("click", () => {
@@ -167,6 +170,7 @@ favButton.addEventListener("click", () => {
     localStorage.removeItem("isSolid");
   }
 });
+
 let isFav = localStorage.getItem("isFav");
 let isSolid = localStorage.getItem("isSolid");
 let bgSun = localStorage.getItem("bgSun")
@@ -198,3 +202,20 @@ if(bgSun == 'yes'){
     document.querySelector(".sun-i").classList.toggle("bxs-moon");
   }, 200);
 }
+
+// //    highlight text
+
+// poemBox.forEach((box) => {
+//   let text = box.querySelector('p').innerHTML
+//   let words = text.split(' ')
+//   box.querySelector('p').innerHTML = words.map(word => `<span>${word}</span>`).join(' ')
+//   let spans = box.querySelector('p').getElementsByTagName('span')
+//   for (let span of spans) {
+//     span.addEventListener('mouseover', function() {
+//       this.classList.add('highlight')
+//     })
+//     span.addEventListener('mouseout', function() {
+//       this.classList.remove('highlight')
+//     })
+//   }
+//     })

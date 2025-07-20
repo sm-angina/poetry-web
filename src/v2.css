@@ -9,8 +9,9 @@
     position: relative;
 }
 :root{
-    --primary: #24d1ac;
-    --secondary: #0effdf50;
+    --primary: #50ee29e8;
+    --secondary: #a4ee8d33;
+
     --border: #35A29F;
     --text: #97FEED;
 }
@@ -55,9 +56,48 @@ nav i{
     font-size: clamp(10px, 4vw, 30px);
     
 }
+.color-box{
+    display: flex;
+    align-items: center;
+    padding-left: 3vw;
+    gap: 5vw;
+    border: 1px solid black;
+    margin-top: 15vh;
+}
+.color-div{
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    border: .5px solid black;
+}
+.color-1{
+    background-image: linear-gradient(#0effdf50 50%,#24d1ac 50%);
+    /* box-shadow: #61e4c5dc 10px -10px 15px,
+    #61e4c5dc 10px 10px 15px; */
+}
+.color-2{
+    background-image: linear-gradient(#ece36450 50%,#ddeb1e 50%);
+    /*    box-shadow: #dfdb16b6 15px -15px 15px,
+    #dfdb16b6 10px 10px 15px; */
+}
+.color-1{
+    background-image: linear-gradient(#a4ee8d33 50%,#50ee29e8 50%);
+    /* box-shadow: #61e4c5dc 10px -10px 15px,
+    #61e4c5dc 10px 10px 15px; */
+}
+.color-1{
+    background-image: linear-gradient(#0effdf50 50%,#24d1ac 50%);
+    /* box-shadow: #61e4c5dc 10px -10px 15px,
+    #61e4c5dc 10px 10px 15px; */
+}
+.color-1{
+    background-image: linear-gradient(#0effdf50 50%,#24d1ac 50%);
+    /* box-shadow: #61e4c5dc 10px -10px 15px,
+    #61e4c5dc 10px 10px 15px; */
+}
 .poem-list ul{
     height: 70vh;
-    margin-top: 20vh;
+    margin-top: 8vh;
     list-style-type: none;
     padding: 0;
     overflow-y: scroll;
@@ -120,9 +160,7 @@ display: none;
     height: 65vh;
     overflow-y: scroll;
     padding: 5vw 20vw;
-    background-color: #ffffff2a;
-    box-shadow: #61e4c5dc 10px -10px 15px,
-    #61e4c5dc 10px 10px 15px;
+    background-color: var(--secondary);
     position: absolute; 
     top: 20vh;
     font-family: "Tiro Bangla","Anek Bangla" sans-serif;
