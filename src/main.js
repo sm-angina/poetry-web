@@ -1,3 +1,4 @@
+// ---------------variables
 const stars1 = document.getElementById("stars1").querySelectorAll(".fa-star");
 const stars2 = document.getElementById("stars2").querySelectorAll(".fa-star");
 const color = [
@@ -20,6 +21,15 @@ const animation = [
   "animation-timing-function: cubic-bezier(.25,.62,.99,.56);",
 ];
 
+  const wrapper = document.querySelector(".wrapper"),
+        poemBox = document.querySelectorAll(".poem-box"),
+        nav = document.querySelector("nav"),
+        showNavi = document.querySelector(".nav-control-i"),
+        background = document.querySelector(".bg");
+
+
+
+// ---------------stars falling
 setInterval("fallStar(stars1)", 2500);
 setInterval("fallStar(stars2)", 2890);
 
@@ -32,8 +42,18 @@ function fallStar(stars) {
     stars[i].style = `animation: none`;
   }, 2490);
 }
+// -------------------writing content
 
-let poemBox = document.querySelectorAll(".poem-box");
+for(let i = 0; i < poemsList.length; i++) {
+  wrapper.innerHTML += `
+        <div class="poem-box">
+            <div class="poem-name">~ ${poemsList[i].poemName} ~</div> <br>
+            <p>${poemsList[i].poem}</p>
+            <div class="poet">SAKIBAL HASAN (${i+1})</div>
+        </div>`
+}
+
+// ------------------ui & styling
 poemBox.forEach((element) =>
   element.addEventListener("click", () =>
     element.classList.toggle("box-shadow")
@@ -56,10 +76,6 @@ document.onscroll = () => {
   }
 };
 
-const nav = document.querySelector("nav"),
-  showNavi = document.querySelector(".nav-control-i"),
-  wrapper = document.querySelector(".wrapper"),
-  background = document.querySelector(".bg");
 let navVisibility = false;
 
 showNavi.addEventListener("click", () => {
