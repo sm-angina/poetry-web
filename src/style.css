@@ -19,7 +19,9 @@ div:active, li:active {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-
+sup {
+  font-size: clamp(10px, 2.5vw, 26px);
+}
 /*-*-*-*-*/
 .highlight{
   color: rgb(58, 101, 243);
