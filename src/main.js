@@ -44,7 +44,7 @@ function fallStar(stars) {
 }
 // -------------------writing content
 
-for(let i = 0; i < poemsList.length; i++) {
+for(let i = 1; i < poemsList.length; i++) {
   wrapper.innerHTML += `
         <div class="poem-box">
             <div class="poem-name">~ ${poemsList[i].poemName} ~</div> <br>
